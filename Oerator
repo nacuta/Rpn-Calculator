@@ -1,0 +1,6 @@
+import java.util.Stack;
+
+public interface Operator {
+    void calculate(Stack<Double> s);
+    boolean matches(String token);
+}
