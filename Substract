@@ -1,0 +1,15 @@
+import java.util.Stack;
+
+public class Substract implements Operator {
+    @Override
+    public void calculate(Stack<Double> s) {
+        double b = s.pop();
+        double a = s.pop();
+        s.push(a - b);
+    }
+
+   @Override
+    public boolean matches(String token) {
+        return token.equals("-");
+    }
+}
