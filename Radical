@@ -1,0 +1,13 @@
+import java.util.Stack;
+
+public class Radical implements  Operator {
+    @Override
+    public void calculate (Stack<Double> s) {
+        double a = s.pop();
+        s.push(Math.sqrt(a));
+    }
+    @Override
+    public boolean matches (String token){
+        return token.equals("rad");
+    }
+}
