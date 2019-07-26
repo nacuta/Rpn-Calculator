@@ -1,0 +1,13 @@
+import java.util.Stack;
+
+public class Sinus implements  Operator{
+    @Override
+    public void calculate (Stack<Double> s) {
+        double b = s.pop();
+        s.push(Math.sin(b));
+    }
+    @Override
+    public boolean matches (String token){
+        return token.equals("sin");
+    }
+}
