@@ -1,0 +1,31 @@
+import java.util.Stack;
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(((int) '0') - 48);
+        System.out.println((char) (0 + 48));
+        Stack<Character> s = new Stack<Character>();
+        String input = "123++";
+        for (char c : input.toCharArray()) {
+            if (iiOperator(c)) {
+                char b = s.pop();
+                char a = s.pop();
+                int nb = ((int) b) - 48;
+                int na = ((int) a) - 48;
+                int rez = na + nb;
+                char crez = (char) (rez + 48);
+                s.push(crez);
+                System.out.println(crez);
+            } else {
+                s.push(c);
+            }
+        }
+
+    }
+
+    private static boolean iiOperator(char c) {
+        return c == '+' || c == '-';
+    }
+
+
+}
